@@ -70,15 +70,8 @@ but you should use your own keys for anything beyond a quick local run):
 ```bash
 # Used by the "send feedback" contact form (/api/contact route)
 NEXT_PUBLIC_RESEND_API_KEY=your_resend_api_key
+NEXT_PUBLIC_REST_COUNTRIES_API_KEY='rc_'
 
-# Legacy/boilerplate vars declared in src/types/env.d.ts - not required by
-# the Countries feature itself, but typed as required env vars project-wide
-NEXT_PUBLIC_PASSWORD=
-NEXT_PUBLIC_SOLANA_RPC_URL=
-NEXT_PUBLIC_SOLANA_NETWORK=devnet
-NEXT_PUBLIC_PINATA_JWT=
-NEXT_PUBLIC_GATEWAY_URL=
-NEXT_PUBLIC_JUPITER_API_KEY=
 ```
 
 > **Note:** The Countries API call itself (`src/stores/api/baseApi.ts`)
@@ -98,16 +91,16 @@ port, see the `dev` script) with Turbopack enabled.
 
 ### Other scripts
 
-| Command             | Description                                          |
-| ------------------- | ----------------------------------------------------- |
-| `yarn build`         | Production build                                      |
-| `yarn start`         | Serve the production build                            |
-| `yarn lint`          | Run ESLint                                            |
-| `yarn typecheck`     | Run `tsc --noEmit`                                    |
-| `yarn format`        | Format the codebase with Prettier                     |
-| `yarn storybook`     | Launch Storybook on port `6006`                       |
+| Command                | Description                                         |
+| ---------------------- | --------------------------------------------------- |
+| `yarn build`           | Production build                                    |
+| `yarn start`           | Serve the production build                          |
+| `yarn lint`            | Run ESLint                                          |
+| `yarn typecheck`       | Run `tsc --noEmit`                                  |
+| `yarn format`          | Format the codebase with Prettier                   |
+| `yarn storybook`       | Launch Storybook on port `6006`                     |
 | `yarn build-storybook` | Build a static Storybook site                       |
-| `yarn i18n:check`    | Validate that all locale message files stay in sync   |
+| `yarn i18n:check`      | Validate that all locale message files stay in sync |
 
 ## API Usage - Countries
 
@@ -170,7 +163,7 @@ follows:
 
 - **`motion`** (Motion for React, the successor to Framer Motion) powers
   interactive transitions across the UI.
-- **`src/components/animate-ui/primitives/**`** wraps Radix/Base UI
+- **`src/components/animate-ui/primitives/**`\*\* wraps Radix/Base UI
   primitives (dropdown menu, alert dialog, sheet, checkbox, tabs, tooltip)
   with animated enter/exit and height transitions, so menus, dialogs, and
   panels used throughout the Countries feature (favorite menu, delete

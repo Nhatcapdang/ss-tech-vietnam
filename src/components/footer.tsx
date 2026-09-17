@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { LocaleSwitcher } from './locale-switcher'
 import { AnimatedThemeToggler } from './ui/animated-theme-toggler'
+import { Kbd } from './ui/kbd'
 
 const Footer = () => {
   const t = useTranslations()
@@ -28,6 +29,7 @@ const Footer = () => {
               <div className="mt-6 flex items-center gap-3">
                 <LocaleSwitcher />
                 <AnimatedThemeToggler />
+                <Kbd>D toggle theme</Kbd>
               </div>
             </div>
             {/* Subscribe Newsletter */}

@@ -318,29 +318,79 @@ committed, without waiting on a separate CI run to catch it.
 
 ## What I'd Do With More Time
 
+### Product / UX features
+
+- **Add a country detail page** (`/countries/[code]`) showing the rich data
+  already typed in `Country` (currencies, languages, borders, region,
+  population, etc.), linked from each table row - a good fit for
+  `generateStaticParams` + ISR.
+- **Compare countries** - select two or three rows and view them
+  side-by-side in a table or drawer.
+- **Interactive map view** - plot searched/favorited countries on a map as
+  an alternative to the table (`maplibre-gl` is already a dependency but
+  currently unused).
+- **Advanced filters** - filter by region, subregion, population range,
+  currency, or language as additional URL-synced params (`nuqs`), on top
+  of the existing keyword search.
+- **Drag-and-drop group reordering** - `@dnd-kit/*` is already installed;
+  use it to let users reorder groups or the countries within a group.
+- **Bulk actions** - select multiple rows and add them all to a group at
+  once, instead of one row at a time.
+- **Export/import favorites** - download groups as JSON/CSV and re-import
+  them, bridging the "no backend" gap without requiring auth.
+
+### Architecture upgrades (Next.js)
+
+- **Server-side data fetching/streaming** - fetch the initial countries
+  list in a Server Component and stream it with `<Suspense>`, hydrating
+  RTK Query client-side for interactivity, to improve LCP instead of
+  fetching entirely client-side.
+- **Route handlers as a BFF layer** - add `app/api/countries/route.ts` to
+  proxy restcountries.com. This removes the hardcoded bearer token from
+  the client bundle (see [Trade-offs](#trade-offs-made-due-to-time-constraints))
+  and enables server-side caching via `fetch`'s `next: { revalidate }`.
+- **Parallel/intercepting routes** - open the country detail view as a
+  modal (`@modal` slot) while keeping `/countries/[code]` shareable as a
+  full page.
+- **Dynamic metadata** - `generateMetadata` per country page (title, OG
+  image with the flag) for shareable links.
+- **Edge middleware** - combine with `next-intl` for geo-based default
+  locale detection.
+
+### Backend / persistence
+
 - **Move all secrets to environment variables** and remove the hardcoded
   API token from `baseApi.ts`; add `.env.example` and stop committing real
   keys in `.env` / `.env.development`.
-- **Add a country detail view/drawer** (route or sheet) showing the rich
-  data already typed in `Country` (currencies, languages, borders, region,
-  population, etc.), linked from each table row.
+- **Sync favorite groups to a real backend** - auth (e.g. NextAuth/Auth.js)
+  plus a lightweight database (Postgres/Supabase, or Vercel KV/Upstash
+  Redis) so favorites/groups sync across devices instead of being
+  `localStorage`-only.
+- **Optimistic updates** - RTK Query optimistic mutations when toggling
+  favorites against a real backend, for instant UI feedback.
+
+### Quality / reliability
+
 - **Write tests:** unit tests for the `favorite` Redux slice (group
-  add/rename/remove/toggle/reset logic) and interaction tests for the
-  favorites dropdown and data table (search, pagination, favorite-group
-  filter), using the Vitest + Storybook setup already in the repo.
-- **Server-side data fetching/caching** for the initial countries list
-  (e.g. prefetching in a Server Component and hydrating RTK Query) to
-  improve LCP instead of fetching entirely client-side.
-- **Sync favorite groups to a backend** (or at least export/import as
-  JSON) so they aren't lost when `localStorage` is cleared or the user
-  switches browsers/devices.
-- **Finish i18n coverage** for the additional locales that already have
-  message files (`fr`, `hi`, `zh-HK`) and wire them into `routing.ts`.
+  add/rename/remove/toggle/reset logic), Storybook interaction tests for
+  the favorites dropdown and data table (search, pagination, favorite-group
+  filter), and a Playwright E2E flow (search → favorite → group → delete),
+  using the Vitest + Storybook setup already in the repo.
+- **Add CI** (e.g. GitHub Actions) to run `lint`, `typecheck`, and
+  Storybook/Vitest tests on every pull request, plus Vercel preview
+  deployments per PR, complementing the local Husky pre-commit hook.
 - **Dedicated empty/error state** for the countries table and a React
   error boundary around the API failure case, on top of the existing
   global toast handling.
 - **Clean up unused boilerplate** (dashboard/company/data-grid leftovers,
   unused env vars) to reduce cognitive overhead for future contributors.
-- **Add CI** (e.g. GitHub Actions) to run `lint`, `typecheck`, and
-  Storybook/Vitest tests on every pull request, complementing the local
-  Husky pre-commit hook.
+
+### Performance / polish
+
+- **Virtualized table rows** - `@tanstack/react-virtual` is already
+  installed; use it if the countries list grows large, to avoid DOM bloat.
+- **Skeleton loading states** - replace/augment the `isFetching` boolean
+  with skeleton rows for smoother perceived performance.
+- **Micro-interactions** - animate the star-toggle (favorite) and group
+  checkbox transitions with `motion` for extra polish beyond the existing
+  menu/dialog animations.

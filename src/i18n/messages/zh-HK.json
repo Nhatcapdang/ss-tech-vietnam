@@ -1,0 +1,343 @@
+{
+  "create_token": "建立代幣",
+  "burn_token": "銷毀代幣",
+  "update_metadata": "更新元數據",
+  "close_token_account": "關閉代幣帳戶",
+  "liquidity_pool": "流動性池",
+  "pool": "池",
+  "overview": "總覽",
+  "create_liquidity": "建立流動性",
+  "create_token_description": "幾秒內建立您的迷因幣",
+  "burn_token_description": "輕鬆銷毀您的代幣",
+  "update_token_description": "輕鬆修改元數據",
+  "close_account_description": "從代幣帳戶回收 SOL",
+  "liquidity_pool_description": "立即為您的代幣進行交易",
+  "enterprise_grade_token_management_platform": "企業級代幣管理平台",
+  "key_highlight": "發行您的 <span>迷因幣</span> 在 Solana 上",
+  "subtitle": "新百萬富翁在路上🚀",
+  "description": "追逐迷因幣 ❌，建立迷因幣 ✅ ",
+  "getStarted": "開始使用",
+  "key_1": "使用自訂設定和元數據在 Solana 上建立新代幣",
+  "key_2": "代幣資訊",
+  "key_3": "代幣名稱",
+  "key_4": "代幣符號",
+  "key_5": "總供應量",
+  "key_6": "描述",
+  "key_7": "輸入您代幣的簡短描述...",
+  "key_8": "權限設定",
+  "key_9": "撤銷凍結權限",
+  "key_10": "撤銷鑄造權限",
+  "key_11": "撤銷更新權限",
+  "key_12": "防止凍結代幣帳戶",
+  "key_13": "防止建立額外代幣",
+  "key_14": "防止更新代幣元數據",
+  "key_15": "代幣圖片",
+  "key_16": "上傳代幣圖片（必填）",
+  "key_17": "建議：512x512px，最大 5MB。支援格式：PNG、JPG、GIF、WebP",
+  "key_18": "社交連結（選填）",
+  "key_19": "網站",
+  "key_20": "Telegram",
+  "key_21": "Twitter/X",
+  "key_22": "Discord",
+  "key_23": "建立代幣",
+  "key_24": "更新元數據",
+  "key_25": "更新您在 Solana 上現有的代幣元數據和設定",
+  "key_26": "選擇要更新的代幣",
+  "key_27": "代幣資訊",
+  "key_28": "更新代幣",
+  "key_29": "銷毀代幣",
+  "key_30": "永久減少您可替代代幣的流通供應量",
+  "key_31": "選擇要銷毀的代幣",
+  "key_32": "選擇代幣...",
+  "key_33": "銷毀數量",
+  "key_34": "可用餘額",
+  "key_35": "銷毀代幣是不可逆的",
+  "key_36": "代幣將被永久從流通中移除且無法恢復。",
+  "key_37": "銷毀摘要",
+  "key_38": "地址",
+  "key_39": "最大供應量",
+  "key_40": "要銷毀的數量",
+  "key_41": "剩餘供應量",
+  "key_42": "減少流通供應量",
+  "key_43": "SOL 鎖定（無法關閉）",
+  "key_44": "SOL 退款（可關閉）",
+  "key_45": "連接錢包",
+  "key_46": "無可關閉的代幣",
+  "key_47": "您的錢包中沒有可關閉的代幣。",
+  "key_48": "建立流動性",
+  "key_49": "使用自訂設定和元數據在 Solana 上建立新的流動性池",
+  "key_50": "基礎數量",
+  "key_51": "報價數量",
+  "key_52": "初始價格",
+  "key_53": "自適應費用",
+  "key_54": "自適應費用此池已啟用自適應費用。隨著池波動性增加，交易費用也會增加 — 為流動性提供者提供更高的收益。",
+  "key_55": "池",
+  "key_56": "查看 Solana 上流動性池的詳細資訊",
+  "key_57": "找不到所選代幣的池",
+  "key_58": "請選擇不同的代幣或建立新池。",
+  "key_59": "選擇您的代幣以查看池",
+  "key_60": "欄位",
+  "faq": {
+    "name": "姓名",
+    "email": "電子郵件",
+    "message": "訊息",
+    "need_help": "需要幫助？",
+    "still_have_questions": "還有",
+    "still_have_questions_highlight": "問題？",
+    "cant_find_answer": "找不到您要的答案？我們友善的客戶支援團隊隨時準備為您提供協助。",
+    "contact_support_team": "聯絡支援團隊",
+    "we_will_respond_within_24_hours": "我們將在 24 小時內回覆",
+    "how_can_we_help_you": "我們如何幫助您？",
+    "common_questions_you_might_have": "常見問題",
+    "common_questions_you_might_have_description": "快速找到關於我們平台的常見問題答案。",
+    "faq_question": [
+      {
+        "question": "我可以用我的迷因幣做什麼？",
+        "answer": "您的迷因幣可以多種方式使用：在去中心化交易所（DEX）上交易、作為投資持有、發送到其他錢包、提供流動性以賺取獎勵、如果啟用則參與社區治理，或在接受您代幣的特定平台中使用。"
+      },
+      {
+        "question": "我的迷因代幣在哪裡列出以及如何查看？",
+        "answer": "您的迷因代幣列在 Solana 區塊鏈上，可以通過 Solscan 或 Solana Explorer 等區塊鏈瀏覽器查看。建立後，您也可以將其列在 Raydium 或 Jupiter 等去中心化交易所上，並在 DexScreener 或 Birdeye 等平台上追蹤其表現。"
+      },
+      {
+        "question": "我可以將我的迷因代幣發送到其他錢包嗎？",
+        "answer": "是的！您可以輕鬆地將迷因代幣發送到任何與 Solana 相容的錢包地址。只需使用您的錢包（如 Phantom 或 Solflare），輸入收件人的錢包地址，指定您要發送的代幣數量，然後確認交易。交易需要支付少量 SOL 費用。"
+      },
+      {
+        "question": "如何將我的迷因代幣兌換成其他加密貨幣？",
+        "answer": "您可以使用 Solana 上的去中心化交易所（DEX），如 Jupiter、Raydium 或 Orca，來兌換您的迷因代幣。連接您的錢包，選擇您的迷因代幣和您想要接收的加密貨幣，輸入數量，查看匯率和費用，然後確認兌換。確保您有一些 SOL 用於交易費用。"
+      },
+      {
+        "question": "我可以在不同錢包之間轉移我的代幣嗎？需要什麼要求？",
+        "answer": "是的，您可以在任何與 Solana 相容的錢包之間轉移您的迷因代幣。您需要收件人錢包地址、足夠轉移的代幣數量，以及少量 SOL（通常為 0.000005 SOL）來支付網路交易費用。轉移通常在 Solana 網路上幾秒內完成。"
+      }
+    ]
+  },
+  "nav": {
+    "home": "首頁",
+    "explore": "整合",
+    "testimonials": "推薦",
+    "faq": "常見問題"
+  },
+  "footer": {
+    "allRightsReserved": "版權所有。"
+  },
+  "localeSwitcher": {
+    "placeholder": "語言",
+    "languages": [
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "vi",
+        "label": "Vietnamese"
+      },
+      {
+        "value": "hi",
+        "label": "हिंदी"
+      },
+      {
+        "value": "zh-HK",
+        "label": "繁體中文"
+      },
+      {
+        "value": "fr",
+        "label": "Français"
+      }
+    ]
+  },
+  "hero": {
+    "titlePrefix": "發行您的",
+    "titleHighlight": "迷因幣",
+    "titleSuffix": "在 Solana 上",
+    "subtitle": "前往月球路上的新百萬富翁 🚀",
+    "description": "追逐迷因幣 ❌，建立迷因幣 ✅ ",
+    "getStarted": "開始使用"
+  },
+  "integration": {
+    "title": "我們合作的品牌",
+    "description": "與",
+    "description_highlight": "世界最具影響力的公司建立強大的合作夥伴關係。",
+    "description_suffix": "與企業和初創公司合作，推動邊界、顛覆市場並取得突破性成果。",
+    "button": "立即建立您自己的代幣"
+  },
+  "testimonials": {
+    "title": "創作者",
+    "title_highlight": "創作者",
+    "title_suffix": "怎麼說",
+    "description": "來自 X 上迷因幣創作者的真實反饋"
+  },
+  "not_found_page": {
+    "title": "找不到頁面",
+    "title_suffix": "您正在尋找的頁面已被刪除或不存在。",
+    "back_to_home": "返回首頁"
+  },
+  "layout": {
+    "title": "NhatCapDang",
+    "description": "免費建立迷因幣 | NhatCapDang",
+    "template": "%s | NhatCapDang",
+    "default": "免費建立迷因幣 | NhatCapDang",
+    "keywords": [
+      "建立迷因幣",
+      "如何免費建立迷因幣",
+      "建立迷因幣 pump fun",
+      "發行 Solana 代幣",
+      "Solana 代幣創建者",
+      "迷因幣生成器"
+    ],
+    "description_large_image": "幾分鐘內在 Solana 上建立迷因幣。無需編碼。用於代幣建立、銷毀、元數據更新等的免費工具。"
+  },
+  "metadata": {
+    "home": {
+      "title": "在 Solana 上發行您的迷因幣 - 免費建立、交易和管理代幣 | Nhatcapdang",
+      "default": "在 Solana 上發行您的迷因幣 - 免費建立、交易和管理代幣 | Nhatcapdang",
+      "description": "幾分鐘內在 Solana 上建立迷因幣。無需編碼。用於代幣建立、銷毀、元數據更新和即時交易的免費工具。今天就開始！",
+      "keywords": [
+        "建立迷因幣",
+        "如何免費建立迷因幣",
+        "建立迷因幣 pump fun",
+        "發行 Solana 代幣",
+        "Solana 代幣創建者",
+        "迷因幣生成器",
+        "發行 Solana 迷因幣",
+        "建立 Solana 迷因幣",
+        "交易 Solana 迷因幣",
+        "管理 Solana 迷因幣",
+        "Solana 迷因幣",
+        "Solana 迷因幣"
+      ]
+    },
+    "overview": {
+      "title": "總覽 - 個人代幣管理平台",
+      "description": "為您的迷因幣提供企業級代幣管理平台，免費建立、交易和管理代幣",
+      "keywords": [
+        "總覽",
+        "代幣管理",
+        "建立代幣",
+        "銷毀代幣",
+        "更新元數據",
+        "關閉代幣帳戶",
+        "建立流動性",
+        "建立流動性池",
+        "建立流動性池描述",
+        "基礎代幣",
+        "報價代幣",
+        "選擇基礎代幣",
+        "選擇報價代幣",
+        "選擇基礎代幣佔位符",
+        "選擇報價代幣佔位符",
+        "代幣數量",
+        "初始價格",
+        "費用等級",
+        "費用等級描述",
+        "建立流動性池",
+        "建立流動性池按鈕",
+        "費用等級穩定",
+        "費用等級波動較小",
+        "費用等級最常見",
+        "費用等級異國",
+        "幾秒內發行您的迷因幣",
+        "建立代幣描述"
+      ]
+    },
+    "create_token": {
+      "title": "立即建立您自己的迷因幣",
+      "description": "幾分鐘內在 Solana 上建立迷因幣。無需編碼。用於代幣建立、銷毀、元數據更新和即時交易的免費工具。今天就開始！",
+      "keywords": [
+        "建立迷因幣",
+        "如何免費建立迷因幣",
+        "建立迷因幣 pump fun",
+        "發行 Solana 代幣",
+        "Solana 代幣創建者",
+        "迷因幣生成器",
+        "發行 Solana 迷因幣",
+        "建立 Solana 迷因幣",
+        "交易 Solana 迷因幣",
+        "管理 Solana 迷因幣",
+        "Solana 迷因幣",
+        "Solana 迷因幣"
+      ]
+    },
+    "update_token": {
+      "title": "更新您在 Solana 上迷因幣的元數據",
+      "description": "輕鬆更新您在 Solana 上迷因幣的元數據。無需編碼。用於代幣建立、銷毀、元數據更新和即時交易的免費工具。今天就開始！",
+      "keywords": [
+        "更新 Solana 代幣元數據",
+        "更新 Solana 代幣資訊",
+        "Solana 代幣",
+        "Solana 元數據",
+        "Solana 代幣元數據更新",
+        "更改 Solana 代幣圖片",
+        "更改 Solana 代幣名稱",
+        "更改 Solana 代幣描述",
+        "更改 Solana 代幣符號",
+        "更改 Solana 代幣網站",
+        "更改 Solana 代幣 Telegram",
+        "更改 Solana 代幣 Twitter",
+        "更改 Solana 代幣 Discord",
+        "更改 Solana 代幣凍結權限",
+        "更改 Solana 代幣鑄造權限",
+        "更改 Solana 代幣更新權限",
+        "更改 Solana 代幣主要銷售",
+        "更改 Solana 代幣賣家費用基點",
+        "更改 Solana 代幣創作者",
+        "更改 Solana 代幣元數據"
+      ]
+    },
+    "pool": {
+      "title": "您在 Solana 上迷因幣的池詳細資訊",
+      "description": "查看 Solana 上流動性池的詳細資訊",
+      "keywords": [
+        "查看 Solana 上的池詳細資訊",
+        "查看池詳細資訊描述",
+        "池詳細資訊 Solana",
+        "選擇基礎代幣",
+        "選擇報價代幣",
+        "選擇基礎代幣佔位符",
+        "選擇報價代幣佔位符",
+        "代幣數量",
+        "初始價格",
+        "費用等級",
+        "費用等級描述",
+        "建立流動性池",
+        "建立流動性池按鈕",
+        "費用等級穩定",
+        "費用等級波動較小",
+        "費用等級最常見",
+        "費用等級異國",
+        "幾秒內發行您的迷因幣",
+        "建立代幣描述"
+      ]
+    },
+    "close_token_account": {
+      "title": "關閉您在 Solana 上迷因幣的代幣帳戶",
+      "description": "關閉您在 Solana 上迷因幣的代幣帳戶",
+      "keywords": [
+        "在 Solana 上關閉代幣帳戶",
+        "關閉代幣帳戶",
+        "關閉代幣帳戶回收 SOL",
+        "關閉代幣帳戶接收 SOL",
+        "關閉代幣帳戶按鈕",
+        "關閉代幣帳戶佔位符",
+        "關閉代幣帳戶佔位符",
+        "如何關閉代幣帳戶",
+        "如何在 Solana 上關閉代幣帳戶",
+        "如何在 Solana 上關閉代幣帳戶"
+      ]
+    },
+    "burn_token": {
+      "title": "銷毀您在 Solana 上迷因幣的代幣",
+      "description": "輕鬆銷毀您的代幣，永遠失去所有代幣，增加剩餘代幣的價值",
+      "keywords": [
+        "在 Solana 上銷毀代幣",
+        "如何銷毀代幣",
+        "銷毀代幣按鈕",
+        "銷毀代幣佔位符",
+        "銷毀代幣描述",
+        "在 Solana 上銷毀代幣",
+        "銷毀代幣增加代幣價值"
+      ]
+    }
+  }
+}

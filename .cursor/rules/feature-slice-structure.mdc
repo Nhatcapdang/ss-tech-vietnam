@@ -1,0 +1,97 @@
+---
+description: >
+  RTK Query feature folder structure. Apply when creating or extending
+  any src/stores/features/<name>/ directory.
+globs: src/stores/features/**/*.ts
+alwaysApply: false
+---
+
+# Feature Store Structure
+
+Every feature lives in `src/stores/features/<name>/` with exactly these files:
+
+```
+stores/features/<name>/
+  <name>-api.ts       ← RTK Query createApi (endpoints, tag types)
+  <name>-slice.ts     ← createSlice (local UI state only)
+  <name>-selectors.ts ← typed selector functions
+  index.ts            ← re-exports only
+```
+
+## <name>-api.ts
+
+```ts
+import { apiSliceAuthenticated } from '@/stores/api/baseApi'
+import type { ListResponse, QueryParams } from '@/types/response-api'
+import type { FooResponse, PostFooRequest } from '@/types/foo'
+
+export const fooApi = apiSliceAuthenticated.injectEndpoints({
+  endpoints: builder => ({
+    getFoo: builder.query<ListResponse<FooResponse>, QueryParams>({
+      query: params => ({ url: '/foo', params }),
+      providesTags: ['Foo'],
+    }),
+    createFoo: builder.mutation<FooResponse, PostFooRequest>({
+      query: body => ({ url: '/foo', method: 'POST', body }),
+      invalidatesTags: ['Foo'],
+    }),
+  }),
+})
+
+export const { useGetFooQuery, useCreateFooMutation } = fooApi
+```
+
+## <name>-slice.ts
+
+Only for UI state (selection, modal open/close, optimistic data).
+Do **not** duplicate server state that RTK Query already owns.
+
+```ts
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+
+interface FooState {
+  selectedIds: number[]
+}
+
+const initialState: FooState = { selectedIds: [] }
+
+export const fooSlice = createSlice({
+  name: 'foo',
+  initialState,
+  reducers: {
+    setSelectedIds: (state, { payload }: PayloadAction<number[]>) => {
+      state.selectedIds = payload
+    },
+  },
+})
+
+export const { setSelectedIds } = fooSlice.actions
+```
+
+## <name>-selectors.ts
+
+```ts
+import type { RootState } from '@/stores/store'
+
+export const selectFooSelectedIds = (state: RootState) =>
+  state.fooSlice.selectedIds
+```
+
+## Register in reducers.ts
+
+After creating the files, add to `src/stores/reducers.ts`:
+
+```ts
+// Add reducer
+fooSlice: fooSlice.reducer,
+
+// Add middleware (if using injectEndpoints on a new createApi)
+// No extra middleware needed when using apiSliceAuthenticated.injectEndpoints
+```
+
+## Rules
+
+- Never call `createApi` twice for the same domain — use `injectEndpoints` instead.
+- Tag types must be declared on the base API in `baseApi.ts` before injecting.
+- Selector files must not contain dispatch logic or side effects.
+- `index.ts` only re-exports; no logic.

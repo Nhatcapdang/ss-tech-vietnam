@@ -1,0 +1,18 @@
+echo "Running pre-commit hooks..."
+
+echo "Running format..."
+yarn run format
+
+echo "Adding changes to git..."
+git add -u
+
+echo "Running i18n check..."
+yarn run i18n:check
+
+echo "Running lint..."
+yarn run lint
+
+echo "Running typecheck..."
+yarn run typecheck
+
+echo "Pre-commit hooks completed successfully."

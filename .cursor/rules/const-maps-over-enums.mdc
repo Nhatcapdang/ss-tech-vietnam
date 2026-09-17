@@ -1,0 +1,69 @@
+---
+description: >
+  Forbids TypeScript enums; mandates const-map pattern instead.
+  Apply whenever touching src/types/enum.ts or adding domain constants.
+globs: "src/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# Const Maps Over TypeScript Enums
+
+TypeScript `enum` produces brittle runtime objects and confuses tree-shaking.
+Use a `const` object + a derived union type instead.
+
+## Pattern
+
+```ts
+// ✅ Const map — new code must follow this pattern
+export const ClientGroup = {
+  CUSTOMER: 'CUSTOMER',
+  VENDOR: 'VENDOR',
+  AGENT: 'AGENT',
+  OTHER_CLIENT: 'OTHER_CLIENT',
+} as const
+
+export type ClientGroup = (typeof ClientGroup)[keyof typeof ClientGroup]
+```
+
+## Migration from existing enums in `src/types/enum.ts`
+
+The existing enums (`CLIENT_GROUP`, `DEPARTMENT`, `JOB_TITLE`, `STATUS`) are
+legacy. When you **touch** a file that imports one of them, convert only the
+enum values you use in that file to the const-map form above. Do not attempt
+a project-wide rename in one commit.
+
+### Zod schemas
+
+```ts
+// ✅ z.enum() accepts a const tuple — derive it from the map
+import { ClientGroup } from '@/types/client-group'
+
+clientGroup: z.enum(
+  Object.values(ClientGroup) as [ClientGroup, ...ClientGroup[]]
+)
+```
+
+### RTK Query / API payloads
+
+```ts
+// Pass the value directly — no enum member lookup needed
+body: { clientGroup: ClientGroup.CUSTOMER }
+```
+
+### Comparisons
+
+```ts
+// ✅
+if (row.clientGroup === ClientGroup.CUSTOMER) { … }
+
+// ❌ — never use numeric or magic-string comparisons
+if (row.clientGroup === 'CUSTOMER') { … }
+```
+
+## Rules
+
+- **Never** add a new `enum` declaration anywhere in the project.
+- The type alias must share the **same name** as the const object so call
+  sites need only one import.
+- Export const maps from a dedicated file per domain
+  (e.g. `src/types/client-group.ts`), not from a shared `enum.ts` barrel.

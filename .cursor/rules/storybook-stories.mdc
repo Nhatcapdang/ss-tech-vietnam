@@ -1,0 +1,67 @@
+---
+description: >
+  Storybook story conventions. Apply when creating or editing any
+  component inside src/components/ui/.
+globs: src/components/ui/*.stories.tsx
+alwaysApply: false
+---
+
+# Storybook Story Conventions
+
+Every component in `src/components/ui/` **must** have a co-located
+`<component>.stories.tsx` file before the component is considered done.
+
+## Minimum required exports
+
+| Export | Purpose |
+|--------|---------|
+| `default` (meta) | `title`, `component`, `tags: ['autodocs']`, `argTypes` |
+| `AllVariants` | Full visual showcase — all variants, sizes, states |
+| At least one named story per distinct feature | e.g. `WithIcon`, `Disabled`, `Loading` |
+
+## File template
+
+```tsx
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { MyComponent } from './my-component'
+
+const meta = {
+  title: 'UI/MyComponent',
+  component: MyComponent,
+  tags: ['autodocs'],
+  parameters: { layout: 'centered' },
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'outline', 'destructive'],
+    },
+  },
+} satisfies Meta<typeof MyComponent>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const AllVariants: Story = {
+  name: 'Showcase — All Variants',
+  render: args => (
+    <div className="flex flex-wrap gap-2 p-4">
+      <MyComponent variant="default" {...args}>Default</MyComponent>
+      <MyComponent variant="outline" {...args}>Outline</MyComponent>
+      <MyComponent variant="destructive" {...args}>Destructive</MyComponent>
+    </div>
+  ),
+}
+
+export const Default: Story = {
+  args: { children: 'Label' },
+}
+```
+
+## Rules
+
+- `title` must follow the pattern `'UI/<ComponentName>'`.
+- Always add `tags: ['autodocs']` so props documentation is auto-generated.
+- Use `render:` for showcase stories; use `args:` for individual stories.
+- Icon-only interactive elements in stories must have `aria-label`.
+- Do **not** import from `@storybook/react` — always use `@storybook/nextjs-vite`.
+- Stories that need server-side data must mock it locally inside the story file.

@@ -1,0 +1,285 @@
+---
+description: >
+alwaysApply: false
+---
+# React Hook Form Patterns
+
+# Feature Store Structure
+
+Every form lives in `src/components/forms/<name>/` with exactly these files:
+
+```
+components/forms/<name>/
+  <name>-form.tsx     ← form component
+  <name>-schema.ts    ← zod schema
+  index.ts            ← re-exports only
+```
+
+## Setup
+
+Always pair `useForm` with `zodResolver` and `satisfies` for default values type safety.
+
+```tsx
+import { zodResolver } from '@hookform/resolvers/zod'
+
+const form = useForm<MyFormSchema>({
+  resolver: zodResolver(myFormSchema),
+  mode: 'onSubmit',
+  defaultValues: {
+    name: '',
+    status: STATUS.ACTIVE,
+    countryId: null,
+  } satisfies MyFormSchema,
+})
+```
+
+---
+
+## FormField Pattern
+
+Every field uses `<FormField>` + `<FormItem>` + `<FormLabel>` + `<FormControl>` + `<FormMessage>`.
+
+```tsx
+<FormField
+  control={form.control}
+  name="name"
+  render={({ field, fieldState }) => (
+    <FormItem>
+      <FormLabel>English Name <span aria-required="true" className="text-destructive">*</span></FormLabel>
+      <FormControl>
+        <Input {...field} aria-required="true" aria-invalid={!!fieldState.error} placeholder="e.g. ABC Corp" />
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```
+
+---
+
+## Select Fields
+
+Spread `field` onto `<Select>` and pass `onValueChange={field.onChange}`.
+
+```tsx
+<FormField
+  control={form.control}
+  name="status"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Status</FormLabel>
+      <FormControl>
+        <Select {...field} onValueChange={field.onChange}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select status" />
+          </SelectTrigger>
+          <SelectContent>
+            {Object.values(STATUS).map(s => (
+              <SelectItem key={s} value={s}>{s}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```
+
+---
+
+## Boolean Radio Groups
+
+Convert `boolean` ↔ `string` at the `RadioGroup` boundary with `value={String(field.value)}` and `onValueChange={v => field.onChange(v === 'true')}`.
+
+```tsx
+<RadioGroup
+  value={String(field.value)}
+  onValueChange={value => field.onChange(value === 'true')}
+>
+  <FieldLabel htmlFor="isPerson-false">
+    <Field orientation="horizontal">
+      <FieldTitle>Company</FieldTitle>
+      <RadioGroupItem value="false" id="isPerson-false" />
+    </Field>
+  </FieldLabel>
+  <FieldLabel htmlFor="isPerson-true">
+    <Field orientation="horizontal">
+      <FieldTitle>Person</FieldTitle>
+      <RadioGroupItem value="true" id="isPerson-true" />
+    </Field>
+  </FieldLabel>
+</RadioGroup>
+```
+
+---
+
+## Checkbox with Dependent Field
+
+Disable the dependent field when the checkbox is unchecked. Clear its value via `setValue` inside `onCheckedChange`.
+
+```tsx
+<FormField
+  control={form.control}
+  name="isAssociationMember"
+  render={({ field: checkField }) => (
+    <FieldLabel>
+      <FormItem >
+        <Field orientation="horizontal">
+          <FieldContent>
+            <FieldTitle>Association Member</FieldTitle>
+            <FieldDescription>Enable if this client belongs to an association.</FieldDescription>
+          </FieldContent>
+          <FormControl>
+            <Checkbox
+              checked={checkField.value}
+              onCheckedChange={value => {
+                checkField.onChange(value)
+                if (!value) form.setValue('associationName', '')
+              }}
+            />
+          </FormControl>
+        </Field>
+        <FormField
+          control={form.control}
+          name="associationName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Association Name</FormLabel>
+              <FormControl>
+                <Input type="text" disabled={!checkField.value} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </FormItem>
+    </FieldLabel>
+  )}
+/>
+```
+
+---
+
+## Combobox (object value)
+
+Use `isItemEqualToValue` to compare by `id`. Pass `value={field.value ?? null}` to keep null-safety.
+
+```tsx
+<Combobox
+  items={data}
+  {...field}
+  value={field.value ?? null}
+  onValueChange={field.onChange}
+  isItemEqualToValue={(item, selected) => item?.id === selected?.id}
+>
+  <ComboboxTrigger render={<Button variant="outline" className="w-full justify-between font-normal" />}>
+    <ComboboxValue>
+      {(item: MyType) =>
+        item
+          ? <span>{item.name}</span>
+          : <span className="text-muted-foreground">Select…</span>
+      }
+    </ComboboxValue>
+  </ComboboxTrigger>
+  <ComboboxContent className="max-w-(--anchor-width) min-w-(--anchor-width)">
+    <ComboboxEmpty>No results found.</ComboboxEmpty>
+    <ComboboxList>
+      {(item: MyType) => (
+        <ComboboxItem key={item.id} value={item} className="flex items-center justify-between pr-1.5">
+          <span>{item.name}</span>
+          {field.value?.id === item.id && <Check className="size-4" />}
+        </ComboboxItem>
+      )}
+    </ComboboxList>
+  </ComboboxContent>
+</Combobox>
+```
+
+---
+
+## Conditional Fields via `useWatch`
+
+Use `useWatch` (not `getValues`) to reactively show/hide fields so the UI rerenders when the watched value changes.
+
+```tsx
+const clientGroup = useWatch({ control: form.control, name: 'clientGroup' })
+
+{clientGroup === CLIENT_GROUP.AGENT && (
+  <FormField control={form.control} name="picHandleAgent" render={...} />
+)}
+```
+
+When changing a watched field also clears related fields, call `setValue` inside `onValueChange`:
+
+```tsx
+onValueChange={value => {
+  field.onChange(value)
+  form.setValue('picHandleAgent', '')
+  form.setValue('staff', null)
+}}
+```
+
+---
+
+## Cross-context Forms
+
+In sub-components, get the parent form via `useFormContext<MyFormSchema>()` — never prop-drill the form instance.
+
+```tsx
+function SubSection() {
+  const form = useFormContext<MyFormSchema>()
+  return <FormField control={form.control} name="..." render={...} />
+}
+```
+
+---
+
+## Draft Persistence
+
+For "new" records use `usePersistForm` with `sessionStorage` and a `debounceMs` to auto-save drafts. Clear on successful submit.
+
+```tsx
+const { clearStorage } = usePersistForm(form, 'my-form-draft', {
+  storageType: 'sessionStorage',
+  debounceMs: 1000,
+  enabled: id === 'new',
+})
+
+// inside onSubmit success:
+clearStorage()
+```
+
+---
+
+## InputGroup with Inline Addon
+
+For inline addons (icon prefix/suffix) use `InputGroupInput` instead of `Input`. Always provide `aria-label` and `type`.
+
+```tsx
+<InputGroup>
+  <InputGroupAddon>
+    <MailIcon aria-hidden="true" />
+  </InputGroupAddon>
+  <InputGroupInput
+    aria-label="Contact Email"
+    type="email"
+    aria-invalid={!!fieldState.error}
+    {...field}
+  />
+</InputGroup>
+```
+
+---
+
+## Required Field Marking
+
+Use `<span aria-required="true" className="text-destructive">*</span>` after the label text. Also set `aria-required="true"` on the input itself.
+
+```tsx
+<FormLabel>
+  English Name{' '}
+  <span aria-required="true" className="text-destructive">*</span>
+</FormLabel>
+<Input {...field} aria-required="true" />
+```

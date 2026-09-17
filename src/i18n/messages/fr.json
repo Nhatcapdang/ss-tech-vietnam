@@ -1,0 +1,343 @@
+{
+  "create_token": "Créer un jeton",
+  "burn_token": "Brûler un jeton",
+  "update_metadata": "Mettre à jour les métadonnées",
+  "close_token_account": "Fermer le compte de jeton",
+  "liquidity_pool": "Pool de liquidité",
+  "pool": "Pool",
+  "overview": "Vue d'ensemble",
+  "create_liquidity": "Créer de la liquidité",
+  "create_token_description": "Créez votre pièce mème en quelques secondes",
+  "burn_token_description": "Brûlez facilement votre jeton",
+  "update_token_description": "Modifiez facilement les métadonnées",
+  "close_account_description": "Récupérer SOL des comptes de jeton",
+  "liquidity_pool_description": "Échangez instantanément pour votre jeton",
+  "enterprise_grade_token_management_platform": "Plateforme de gestion de jetons de niveau entreprise",
+  "key_highlight": "Lancez votre <span>Pièce mème</span> sur Solana",
+  "subtitle": "Nouveau millionnaire en route🚀",
+  "description": "Courir après la pièce mème ❌, Créer une pièce mème ✅ ",
+  "getStarted": "Commencer",
+  "key_1": "Créer un nouveau jeton sur Solana avec des paramètres et métadonnées personnalisés",
+  "key_2": "Informations sur le jeton",
+  "key_3": "Nom du jeton",
+  "key_4": "Symbole du jeton",
+  "key_5": "Offre totale",
+  "key_6": "Description",
+  "key_7": "Entrez une brève description de votre jeton...",
+  "key_8": "Paramètres d'autorité",
+  "key_9": "Révoquer l'autorité de gel",
+  "key_10": "Révoquer l'autorité de frappe",
+  "key_11": "Révoquer l'autorité de mise à jour",
+  "key_12": "Empêche le gel des comptes de jeton",
+  "key_13": "Empêche la création de jetons supplémentaires",
+  "key_14": "Empêche la mise à jour des métadonnées du jeton",
+  "key_15": "Image du jeton",
+  "key_16": "Télécharger l'image du jeton (requis)",
+  "key_17": "Recommandé : 512x512px, Max 5MB. Formats pris en charge : PNG, JPG, GIF, WebP",
+  "key_18": "Liens sociaux (optionnel)",
+  "key_19": "Site web",
+  "key_20": "Telegram",
+  "key_21": "Twitter/X",
+  "key_22": "Discord",
+  "key_23": "Créer un jeton",
+  "key_24": "Mettre à jour les métadonnées",
+  "key_25": "Mettez à jour les métadonnées et paramètres existants de votre jeton sur Solana",
+  "key_26": "Sélectionner le jeton à mettre à jour",
+  "key_27": "Informations sur le jeton",
+  "key_28": "Mettre à jour le jeton",
+  "key_29": "Brûler un jeton",
+  "key_30": "Réduire définitivement l'offre en circulation de vos jetons fongibles",
+  "key_31": "Sélectionner le jeton à brûler",
+  "key_32": "Sélectionner un jeton...",
+  "key_33": "Montant à brûler",
+  "key_34": "Solde disponible",
+  "key_35": "Brûler des jetons est irréversible",
+  "key_36": "Les jetons seront définitivement retirés de la circulation et ne pourront pas être récupérés.",
+  "key_37": "Résumé de la combustion",
+  "key_38": "Adresse",
+  "key_39": "Offre maximale",
+  "key_40": "Montant à brûler",
+  "key_41": "Offre restante",
+  "key_42": "RÉDUIT L'OFFRE EN CIRCULATION",
+  "key_43": "SOL verrouillé (non fermable)",
+  "key_44": "Remboursement SOL (fermable)",
+  "key_45": "Connecter le portefeuille",
+  "key_46": "Aucun jeton fermable",
+  "key_47": "Il n'y a aucun jeton fermable dans votre portefeuille.",
+  "key_48": "Créer de la liquidité",
+  "key_49": "Créer un nouveau pool de liquidité sur Solana avec des paramètres et métadonnées personnalisés",
+  "key_50": "Montant de base",
+  "key_51": "Montant de cotation",
+  "key_52": "Prix initial",
+  "key_53": "Frais adaptatifs",
+  "key_54": "Frais adaptatifs Ce pool a les frais adaptatifs activés. À mesure que la volatilité du pool augmente, les frais de transaction augmentent également — offrant des rendements accrus pour les fournisseurs de liquidité.",
+  "key_55": "Pool",
+  "key_56": "Voir les détails d'un pool de liquidité sur Solana",
+  "key_57": "Aucun pool trouvé pour le jeton sélectionné",
+  "key_58": "Veuillez sélectionner un jeton différent ou créer un nouveau pool.",
+  "key_59": "Choisissez votre jeton pour voir les pools",
+  "key_60": "Colonnes",
+  "faq": {
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "need_help": "Besoin d'aide ?",
+    "still_have_questions": "Vous avez encore",
+    "still_have_questions_highlight": "des questions ?",
+    "cant_find_answer": "Vous ne trouvez pas la réponse que vous cherchez ? Notre équipe d'assistance clientèle amicale est prête à vous aider.",
+    "contact_support_team": "Contacter l'équipe de support",
+    "we_will_respond_within_24_hours": "Nous répondrons dans les 24 heures",
+    "how_can_we_help_you": "Comment pouvons-nous vous aider ?",
+    "common_questions_you_might_have": "Questions courantes",
+    "common_questions_you_might_have_description": "Trouvez rapidement des réponses aux questions fréquemment posées sur notre plateforme.",
+    "faq_question": [
+      {
+        "question": "Que puis-je faire avec ma pièce mème ?",
+        "answer": "Votre pièce mème peut être utilisée de plusieurs façons : l'échanger sur des échanges décentralisés (DEX), la conserver comme investissement, l'envoyer à d'autres portefeuilles, fournir de la liquidité pour gagner des récompenses, participer à la gouvernance communautaire si elle est activée, ou l'utiliser dans des plateformes spécifiques qui acceptent votre jeton."
+      },
+      {
+        "question": "Où mon jeton mème est-il listé et comment puis-je le voir ?",
+        "answer": "Votre jeton mème est listé sur la blockchain Solana et peut être consulté via des explorateurs de blockchain comme Solscan ou Solana Explorer. Une fois créé, vous pouvez également le lister sur des échanges décentralisés comme Raydium ou Jupiter, et suivre ses performances sur des plateformes comme DexScreener ou Birdeye."
+      },
+      {
+        "question": "Puis-je envoyer mes jetons mème à d'autres portefeuilles ?",
+        "answer": "Oui ! Vous pouvez facilement envoyer vos jetons mème à n'importe quelle adresse de portefeuille compatible Solana. Utilisez simplement votre portefeuille (comme Phantom ou Solflare), entrez l'adresse du portefeuille du destinataire, spécifiez le montant de jetons que vous souhaitez envoyer, et confirmez la transaction. Des frais SOL minimes seront requis pour la transaction."
+      },
+      {
+        "question": "Comment échanger mes jetons mème contre d'autres cryptomonnaies ?",
+        "answer": "Vous pouvez échanger vos jetons mème en utilisant des échanges décentralisés (DEX) sur Solana tels que Jupiter, Raydium ou Orca. Connectez votre portefeuille, sélectionnez votre jeton mème et la cryptomonnaie que vous souhaitez recevoir, entrez le montant, examinez le taux de change et les frais, puis confirmez l'échange. Assurez-vous d'avoir du SOL pour les frais de transaction."
+      },
+      {
+        "question": "Puis-je transférer mes jetons entre différents portefeuilles et quelles sont les exigences ?",
+        "answer": "Oui, vous pouvez transférer vos jetons mème entre n'importe quels portefeuilles compatibles Solana. Vous aurez besoin de l'adresse du portefeuille du destinataire, de suffisamment de jetons à transférer, et d'une petite quantité de SOL (généralement 0,000005 SOL) pour couvrir les frais de transaction du réseau. Les transferts sont généralement complétés en quelques secondes sur le réseau Solana."
+      }
+    ]
+  },
+  "nav": {
+    "home": "Accueil",
+    "explore": "Intégration",
+    "testimonials": "Témoignages",
+    "faq": "FAQ"
+  },
+  "footer": {
+    "allRightsReserved": "Tous droits réservés."
+  },
+  "localeSwitcher": {
+    "placeholder": "Langue",
+    "languages": [
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "vi",
+        "label": "Vietnamese"
+      },
+      {
+        "value": "hi",
+        "label": "हिंदी"
+      },
+      {
+        "value": "zh-HK",
+        "label": "繁體中文"
+      },
+      {
+        "value": "fr",
+        "label": "Français"
+      }
+    ]
+  },
+  "hero": {
+    "titlePrefix": "Lancez votre",
+    "titleHighlight": "Pièce mème",
+    "titleSuffix": "sur Solana",
+    "subtitle": "Nouveau millionnaire en route vers la lune 🚀",
+    "description": "Courir après la pièce mème ❌, Créer une pièce mème ✅ ",
+    "getStarted": "Commencer"
+  },
+  "integration": {
+    "title": "Les marques avec lesquelles nous travaillons",
+    "description": "Construire des partenariats solides avec",
+    "description_highlight": "les entreprises les plus influentes au monde.",
+    "description_suffix": "Collaborer avec des entreprises et des startups pour repousser les limites, perturber les marchés et obtenir des résultats révolutionnaires.",
+    "button": "Créez votre propre jeton maintenant"
+  },
+  "testimonials": {
+    "title": "Ce que",
+    "title_highlight": "les créateurs",
+    "title_suffix": "disent",
+    "description": "Vrais retours des créateurs de pièces mème sur X"
+  },
+  "not_found_page": {
+    "title": "Page non trouvée",
+    "title_suffix": "La page que vous recherchez a été supprimée ou n'existe pas.",
+    "back_to_home": "Retour à l'accueil"
+  },
+  "layout": {
+    "title": "NhatCapDang",
+    "description": "Créer une pièce mème gratuitement | NhatCapDang",
+    "template": "%s | NhatCapDang",
+    "default": "Créer une pièce mème gratuitement | NhatCapDang",
+    "keywords": [
+      "créer une pièce mème",
+      "comment créer une pièce mème gratuitement",
+      "créer une pièce mème pump fun",
+      "lancer un jeton solana",
+      "créateur de jeton solana",
+      "générateur de pièce mème"
+    ],
+    "description_large_image": "Créez une pièce mème sur Solana en quelques minutes. Aucun code. Outils gratuits pour la création de jetons, la combustion, les mises à jour de métadonnées et plus encore."
+  },
+  "metadata": {
+    "home": {
+      "title": "Lancez votre pièce mème sur Solana - Créez, échangez et gérez des jetons gratuitement | Nhatcapdang",
+      "default": "Lancez votre pièce mème sur Solana - Créez, échangez et gérez des jetons gratuitement | Nhatcapdang",
+      "description": "Créez une pièce mème sur Solana en quelques minutes. Aucun code requis. Outils gratuits pour la création de jetons, la combustion, les mises à jour de métadonnées et le trading instantané. Commencez dès aujourd'hui !",
+      "keywords": [
+        "créer une pièce mème",
+        "comment créer une pièce mème gratuitement",
+        "créer une pièce mème pump fun",
+        "lancer un jeton solana",
+        "créateur de jeton solana",
+        "générateur de pièce mème",
+        "lancer une pièce mème solana",
+        "créer une pièce mème solana",
+        "échanger une pièce mème solana",
+        "gérer une pièce mème solana",
+        "pièce mème solana",
+        "pièce mème solana"
+      ]
+    },
+    "overview": {
+      "title": "Vue d'ensemble - Plateforme de gestion de jetons personnels",
+      "description": "Plateforme de gestion de jetons de niveau entreprise pour votre pièce mème, créez, échangez et gérez des jetons gratuitement",
+      "keywords": [
+        "vue d'ensemble",
+        "gestion de jetons",
+        "créer un jeton",
+        "brûler un jeton",
+        "mettre à jour les métadonnées",
+        "fermer le compte de jeton",
+        "créer de la liquidité",
+        "créer un pool de liquidité",
+        "description du pool de liquidité",
+        "jeton de base",
+        "jeton de cotation",
+        "sélectionner le jeton de base",
+        "sélectionner le jeton de cotation",
+        "choisir le jeton de base placeholder",
+        "choisir le jeton de cotation placeholder",
+        "montants de jeton",
+        "prix initial",
+        "niveau de frais",
+        "description du niveau de frais",
+        "création d'un pool de liquidité",
+        "bouton créer un pool de liquidité",
+        "niveau de frais stable",
+        "niveau de frais moins volatil",
+        "niveau de frais le plus courant",
+        "niveau de frais exotique",
+        "lancez votre pièce mème en quelques secondes",
+        "description de création de jeton"
+      ]
+    },
+    "create_token": {
+      "title": "Créez votre propre pièce mème maintenant",
+      "description": "Créez une pièce mème sur Solana en quelques minutes. Aucun code requis. Outils gratuits pour la création de jetons, la combustion, les mises à jour de métadonnées et le trading instantané. Commencez dès aujourd'hui !",
+      "keywords": [
+        "créer une pièce mème",
+        "comment créer une pièce mème gratuitement",
+        "créer une pièce mème pump fun",
+        "lancer un jeton solana",
+        "créateur de jeton solana",
+        "générateur de pièce mème",
+        "lancer une pièce mème solana",
+        "créer une pièce mème solana",
+        "échanger une pièce mème solana",
+        "gérer une pièce mème solana",
+        "pièce mème solana",
+        "pièce mème solana"
+      ]
+    },
+    "update_token": {
+      "title": "Mettre à jour les métadonnées de votre pièce mème sur Solana",
+      "description": "Mettez à jour facilement les métadonnées de votre pièce mème sur Solana. Aucun code requis. Outils gratuits pour la création de jetons, la combustion, les mises à jour de métadonnées et le trading instantané. Commencez dès aujourd'hui !",
+      "keywords": [
+        "mettre à jour les métadonnées du jeton solana",
+        "mettre à jour les informations du jeton solana",
+        "jeton solana",
+        "métadonnées solana",
+        "mise à jour des métadonnées du jeton solana",
+        "changer l'image du jeton solana",
+        "changer le nom du jeton solana",
+        "changer la description du jeton solana",
+        "changer le symbole du jeton solana",
+        "changer le site web du jeton solana",
+        "changer le telegram du jeton solana",
+        "changer le twitter du jeton solana",
+        "changer le discord du jeton solana",
+        "changer l'autorité de gel du jeton solana",
+        "changer l'autorité de frappe du jeton solana",
+        "changer l'autorité de mise à jour du jeton solana",
+        "changer la vente primaire du jeton solana",
+        "changer les points de base des frais du vendeur du jeton solana",
+        "changer les créateurs du jeton solana",
+        "changer les métadonnées du jeton solana"
+      ]
+    },
+    "pool": {
+      "title": "Détails du pool pour votre pièce mème sur Solana",
+      "description": "Voir les détails d'un pool de liquidité sur Solana",
+      "keywords": [
+        "voir les détails du pool sur solana",
+        "description des détails du pool",
+        "détails du pool solana",
+        "choisir le jeton de base",
+        "choisir le jeton de cotation",
+        "choisir le jeton de base placeholder",
+        "choisir le jeton de cotation placeholder",
+        "montants de jeton",
+        "prix initial",
+        "niveau de frais",
+        "description du niveau de frais",
+        "création d'un pool de liquidité",
+        "bouton créer un pool de liquidité",
+        "niveau de frais stable",
+        "niveau de frais moins volatil",
+        "niveau de frais le plus courant",
+        "niveau de frais exotique",
+        "lancez votre pièce mème en quelques secondes",
+        "description de création de jeton"
+      ]
+    },
+    "close_token_account": {
+      "title": "Fermer le compte de jeton pour votre pièce mème sur Solana",
+      "description": "Fermer le compte de jeton pour votre pièce mème sur Solana",
+      "keywords": [
+        "fermer le compte de jeton sur solana",
+        "fermer le compte de jeton",
+        "fermer le compte de jeton récupérer sol",
+        "fermer le compte de jeton recevoir sol",
+        "bouton fermer le compte de jeton",
+        "placeholder fermer le compte de jeton",
+        "placeholder fermer le compte de jeton",
+        "comment fermer le compte de jeton",
+        "comment fermer le compte de jeton sur solana",
+        "comment fermer le compte de jeton sur solana"
+      ]
+    },
+    "burn_token": {
+      "title": "Brûler un jeton pour votre pièce mème sur Solana",
+      "description": "Brûlez facilement votre jeton, perdez tous vos jetons à jamais, augmentez la valeur des jetons restants",
+      "keywords": [
+        "brûler un jeton sur solana",
+        "comment brûler un jeton",
+        "bouton brûler un jeton",
+        "placeholder brûler un jeton",
+        "description brûler un jeton",
+        "brûler un jeton sur solana",
+        "brûler un jeton augmenter la valeur du jeton"
+      ]
+    }
+  }
+}
